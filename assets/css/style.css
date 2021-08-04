@@ -8,9 +8,10 @@ body {
     font-family: Helvetica, Arial, sans-serif;
 }
 :root {
-    --primary-color: #2DE48A;
-    --secondary-color: #1D2951;
-    --tertiary-color: #599ABF;
+    --primary-color: #43d4d0;
+    --secondary-color: #0D2644;
+    --tertiary-color: #2F7BAD;
+    --accent-color: #F70945;
 }
 /* apply styles to <header> */
 header {
@@ -21,7 +22,7 @@ header {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    background-image: url("https://wallpaperboat.com/wp-content/uploads/2019/06/blue-galaxy-23.jpg");; 
+    background-image: url('../images/background5.jpg'); 
     opacity: 6;
     background-size: cover;
     background-position: center;
@@ -90,8 +91,8 @@ section {
 }
 /* Hero Style Start */
 .hero {
-    background-image: url("https://wallpaperboat.com/wp-content/uploads/2019/06/blue-galaxy-23.jpg");;
-    opacity: 6;
+    background-image: url('../images/background5.jpg');
+    opacity: 1;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -101,32 +102,42 @@ section {
     background-attachment: fixed;
     background-position: 80%;
 }
-.hero-cta {
-    width: 30%;
+.hero-art {
+    width: 20%;
     text-align: right;
     margin: 3.5%;
     color: #fff;
     font-size: 18px;
     line-height: 1.2;
 }
-.hero-cta h2 {
+.hero-art h2 {
     font-style: italic;
     font-size: 80px;
     color: var(--primary-color);
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-.hero-cta p {
+.hero-art h2:hover {
+    color: var(--accent-color);
+    font-weight: bolder;
+    transform: translateX(10px) scale(1.2);
+    transition-timing-function: ease-in-out;
+}
+.hero-art p {
     font-style: inherit;
-    font-size: 65px;
+    font-size: 28px;
     color: #fff;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+.hero-art p:hover {
+    color: var(--accent-color);
+    font-weight: bolder;
+    transform: translateX(10px) scale(1.2);
+    transition-timing-function: ease-in;
+}
 .hero-img {
-    background-color: rgba(45, 228, 138, 0.75);
-    padding: 20px;
     color: var(--secondary-color);
     border-style: solid 1px var(--secondary-color);
-    width: 40%;
+    width: 30%;
     margin: 3.5%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 15px;    
@@ -135,6 +146,59 @@ section {
     width: 100%;
     border-radius: 15px;
 }
+/* Rollover Image */
+.hero-img {
+    position: relative;
+    width: 360px; /* can be omitted for a regular non-lazy image */
+    max-width: 100%;
+}
+.hero-img img.image-hover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity .2s;
+}
+.hero-img:hover img.image-hover {
+    opacity: 1;
+}
+/* Rollover end */
+.hero-code {
+    width: 20%;
+    text-align: left;
+    margin: 3.5%;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.2;
+    flex-grow: 2;
+}
+.hero-code h2 {
+    font-style: italic;
+    font-size: 80px;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.hero-code h2:hover {
+    color: var(--accent-color);
+    font-weight: bolder;
+    transform: translateY(10px) scale(1.2);
+    transition-timing-function: ease-in-out;
+}
+.hero-code p {
+    font-style: inherit;
+    font-size: 28px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.hero-code p:hover {
+    color: var(--accent-color);
+    font-weight: bolder;
+    transform: translateY(10px) scale(1.2);
+    transition-timing-function: ease-in-out;
+}
 /* Hero Style End */
 .intro p {
     line-height: 1.7;
@@ -142,9 +206,13 @@ section {
     width: 40%;
     font-size: 20px;
     margin: 0 auto;
-    text-align: center;
+    text-align: right;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+}
+.intro p:last-child {
+    text-align: left;
 }
 .skills {
     background: var(--primary-color);
@@ -201,14 +269,11 @@ section {
     color: var(--secondary-color);
 }
 .projects {
-    width: 30%;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-}
-.projects:first-child {
-    width: 100%;
+    justify-content: space-between;
 }
 .project {
     margin: 20px;
