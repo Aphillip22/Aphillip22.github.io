@@ -412,10 +412,10 @@ article:first-child {
        text-align: center;
        width: 100%;
    }
-   .hero-cta, .hero-form {
+   .hero-art, .hero-img, .hero-code {
        width: 100%;
    }
-   .hero-cta {
+   .hero-art {
        text-align: center;
    }
    .section-title {
