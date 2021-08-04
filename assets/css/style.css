@@ -415,7 +415,7 @@ article:first-child {
    .hero-art, .hero-img, .hero-code {
        width: 100%;
    }
-   .hero-art {
+   .hero-art, .hero-code {
        text-align: center;
    }
    .section-title {
@@ -460,7 +460,7 @@ article:first-child {
     .intro p {
         width: 100%;
     }
-    .trainer {
+    .project {
         flex: 0 100%;
     }
     .contact-info {
