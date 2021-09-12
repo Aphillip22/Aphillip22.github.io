@@ -299,6 +299,7 @@ article:first-child {
 }
 .project img {
     width: 100%;
+    border-radius: 15px;
 }
 .project-details {
     padding: 25px;
